@@ -1,0 +1,30 @@
+@model MeuCadastroClientesMvc.Models.Cliente // Adicionei o modelo específico da View
+
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<h1>Excluir Cliente</h1>
+
+<h3>Confirmação</h3>
+<p>Tem certeza que deseja excluir este cliente?</p>
+<div>
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="ID_Cliente" />
+        <div class="form-group">
+            <input type="submit" value="Confirmar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-default">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@* Cliente encluído com Sucesso! *@
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+
+
+
+
