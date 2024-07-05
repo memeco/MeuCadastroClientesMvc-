@@ -35,7 +35,3 @@ app.MapControllerRoute(
 );
 
 app.Run();
-
-
-
-

@@ -4,10 +4,12 @@
     ViewData["Title"] = "Clientes";
 }
 
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+
 <h1>Clientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Adicionar Cadastro</a>
 </p>
 <table class="table">
     <thead>
@@ -32,11 +34,9 @@
             <td>@item.RG</td>
             <td>@item.CPF</td>
             <td>@item.Email</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID_Cliente">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID_Cliente">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID_Cliente">Delete</a>
-            </td>
+            <td><a asp-action="Edit" id="edit" asp-route-id="@item.ID_Cliente">Editar</a> </td>
+            <td><a asp-action="Details" id="details" asp-route-id="@item.ID_Cliente">Detalhes</a></td>
+            <td><a asp-action="Delete" id="delete" asp-route-id="@item.ID_Cliente">Deletar</a></td>
         </tr>
 }
     </tbody>
